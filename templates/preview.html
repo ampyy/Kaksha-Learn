@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}
+Kaksha - Preview
+{% endblock %}
+{% block content %}
+
+<center><h2 style="font-family: 'Abril Fatface', cursive;" class="text-warning w3-mobile">Preview of Courses</h2>
+    <p class="text-danger">This page may take a little longer time to fully load. Depends on your internet connection.</p>
+</center>
+<div class="w3-container" style="margin-top:22px;padding:44px;">
+    {% for p in preview %}
+    <button onclick="myFunction('id')" class="w3-button w3-block w3-yellow w3-left-align w3-mobile"
+            style="font-family: 'Courier Prime', monospace;">
+        <center>>>Click on me to see Demo of {{ p.heading }} Language<<</center>
+    </button>
+    <div id="id" class="w3-hide w3-container" style="padding:22px;">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <center><b><p
+                            style="font-family: 'Courier Prime', monospace;font-size:22px;background-color:yellow;width:60%; ">
+                        {{ p.head1 }}</p></b></center>
+                    <div class="embed-responsive embed-responsive-21by9">
+                        <iframe class="embed-responsive-item" src="{{ p.iframe1 }}" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <center><b><p
+                            style="font-family: 'Courier Prime', monospace;font-size:22px;background-color:yellow;width:60%; ">
+                        {{ p.head2 }}</p></b></center>
+                    <div class="embed-responsive embed-responsive-21by9">
+                        <iframe class="embed-responsive-item" src="{{ p.iframe2 }}" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <center><b><p
+                            style="font-family: 'Courier Prime', monospace;font-size:22px;background-color:yellow;width:60%; ">
+                        {{ p.head3 }}</p></b></center>
+                    <div class="embed-responsive embed-responsive-21by9">
+                        <iframe class="embed-responsive-item" src="{{ p.iframe3 }}" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <center><b><p
+                            style="font-family: 'Courier Prime', monospace;font-size:22px;background-color:yellow;width:60%; ">
+                        {{ p.head4 }}</p></b></center>
+                    <img src="{{ p.img1 }}" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="carousel-item">
+                    <center><b><p
+                            style="font-family: 'Courier Prime', monospace;font-size:22px;background-color:yellow;width:60%; ">
+                        {{ p.head4 }}</p></b></center>
+                    <img src="{{ p.img2 }}" class="img-fluid" alt="Responsive image">
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+    {% endfor %}
+
+
+</div>
+<script>
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className =
+    x.previousElementSibling.className.replace("w3-black", "w3-red");
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className =
+    x.previousElementSibling.className.replace("w3-red", "w3-black");
+  }
+}
+
+
+
+
+
+</script>
+
+{% endblock %}

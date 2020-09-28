@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Kaksha - Courses
+{% endblock %}
+{% block content %}
+
+<center style="margin-top:22px;"><h1 style="font-family: 'Abril Fatface', cursive;" class="text-danger"><b>Available Courses </b></h1></center>
+<div class="row row-cols-1 row-cols-md-2" style="margin-top:22px;width:100%;margin-left:auto;margin-right:auto;">
+    {% for course in courses %}
+
+
+    <div class="col mb-4">
+        <div class="card" id="courses" style="background-color:#EA7B73">
+                  <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="{{ course.video }}"  allowfullscreen></iframe>
+</div>
+            <div class="card-body">
+                <h4 style="font-family: 'Abril Fatface', cursive;" class="card-title text-white"><strong>{{course.title}}</strong></h4>
+                <hr>
+                <p style="font-family: 'Courier Prime', monospace;" class="card-text text-white">Description : {{ course.cour_desc|safe|truncatewords:10 }}</p>
+                <p style="font-family: 'Courier Prime', monospace;" class="card-text text-white">Duration : {{ course.cour_time }}</p>
+                <p style="font-family: 'Courier Prime', monospace;" class="card-text text-white">Amount : Only ₹{{ course.amount }}</p>
+                <a style="font-family: 'Secular One', sans-serif;" class="btn btn-outline-light" href="{% url 'cour_desc' course.pk %}" role="button">Details</a>
+                <a style="font-family: 'Secular One', sans-serif;" class="btn btn-danger" href="{% url 'pay' course.pk %}" role="button">Learn</a>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    {% endfor %}
+</div>
+
+
+{% endblock %}

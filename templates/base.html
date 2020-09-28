@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body style=" background-color:white;">
+<nav class="navbar navbar-expand-md bg-light">
+    <a class="navbar-brand text-danger" href="{% url 'home' %}"
+       style="font-family: 'Secular One', sans-serif;">
+
+    <span class="text-danger">क</span>   <span class="text-info">a</span>    <span class="text-warning">k</span>
+         <span class="text-danger">s</span>  <span class="text-info">h</span>  <span class="text-danger">a</span>
+
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon bg-info"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-info" href="{% url 'home' %}" style="font-family: 'Secular One', sans-serif;">Home | </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-danger" href="{% url 'courses' %}"
+                   style="font-family: 'Secular One', sans-serif;">Courses | </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-info" href="{% url 'howweteach' %}"
+                   style="font-family: 'Secular One', sans-serif;">How we teach | </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-warning" href="{% url 'Preview' %}"
+                   style="font-family: 'Secular One', sans-serif;">Preview | </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-info" href="{% url 'contactus' %}"
+                   style="font-family: 'Secular One', sans-serif;">Contact Us | </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+{% block content %}
+
+{% endblock %}
+<footer id="sticky-footer" class="py-4 text-white-50" style="margin-top:18px;">
+    <div class="container text-center">
+        <small class="text-info" style="font-family: 'Secular One', sans-serif;">Copyright &copy; कaksha</small>
+        <p>
+            <b class="text-info" style="font-family: 'Secular One', sans-serif;">Follow us on</b>
+            <a class="text-info" href="https://instagram.com/kaksha_in?igshid=1bh1ic762diuw" class="icoInstagram" title="Instagram"
+               target="_blank"><i class="fa fa-instagram"></i></a>
+        </p>
+        <p class="text-info" style="font-family: 'Secular One', sans-serif;">
+            <b>Email Us at : Pandeyaman2485@gmail.com</b><br>
+            <b>Contact Us at : 7906524297 </b>
+        </p>
+    </div>
+</footer>
+
+
+</body>
+</html>
+

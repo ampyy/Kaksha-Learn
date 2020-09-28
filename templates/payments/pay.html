@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+Kaksha - Pay
+{% endblock %}
+{% block content %}
+
+<div class="alert alert-info alert-dismissible fade show"  style="margin-top:22px;margin-left:auto;margin-right:auto;width:80%;padding:22px;border-radius:10px; " role="alert">
+  <strong style="font-family: 'Courier Prime';">Fill the form below and buy the course now. We are Paytm Secure and Certified!!</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div style="margin-top:22px;margin-left:auto;margin-right:auto;width:80%;padding:22px;border-radius:10px; "
+     class="bg-light">
+    <center><h2 style="font-family: 'Abril Fatface', cursive;" class="text-info"><b>Buy & Learn</b></h2></center>
+    <center><i class="text-success" style="font-family: 'Courier Prime', monospace;">Secure Payment - Paytm Certified</i></center>
+    <form method="POST" class="was-validated">
+         {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your Name" name="name" value="" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+            <label for="number">Calling Number:</label>
+            <input type="text" class="form-control" id="number" placeholder="Enter Your Calling Number" name="number" maxlength="10" minlength="10" value=""
+                   required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+            <label for="course_title">Course:</label>
+            <input type="text" class="form-control" id="course_title" placeholder="" name="course_title" value="{{ course.title }}" required
+                   readonly>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="text" class="form-control" id="amount" placeholder="" name="amount" value="{{course.amount}}" required readonly>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+            <label for="paid">Paid:</label>
+            <input type="text" class="form-control" id="paid" placeholder="" name="paid" value="NO" required readonly>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <button type="submit" class="btn btn-info">Learn</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+Kaksha - {{ course.title }}
+{% endblock %}
+{% block content %}
+
+
+<div class="col mb-4">
+    <div class="card" id="courses" style="background-color:#EA7B73">
+        <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="{{ course.video }}"  allowfullscreen></iframe>
+</div>
+
+        <div class="card-body">
+            <h5 class="card-title text-white" style="font-family: 'Abril Fatface', cursive;"><strong>{{course.title}}</strong></h5>
+            <hr>
+            <p class="card-text text-white" style="font-family: 'Courier Prime', monospace;">Description : {{ course.cour_desc }}</p>
+            <p class="card-text text-white" style="font-family: 'Courier Prime', monospace;">Duration : {{ course.cour_time }}</p>
+            <p class="card-text text-white" style="font-family: 'Courier Prime', monospace;">Amount : Only ₹{{ course.amount }}</p>
+            <a class="btn btn-danger" style="font-family: 'Secular One', sans-serif;"  href="{% url 'pay' course.pk %}" role="button">Learn</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

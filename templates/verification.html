@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Kaksha - Pay
+{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="alert alert-info" role="alert" style="width:80%;margin-top:22px;margin-left:auto;margin-right:auto;padding:22px;border-radius:10px;">
+  <h4 class="alert-heading" style="font-family: 'Abril Fatface', cursive;">Congratulations !!</h4>
+  <p style="font-family: 'Courier Prime', monospace;">The Course is all Yours Now</p>
+  <hr>
+  <p class="mb-0">Fill the verification form bewlow and start the course!</p>
+</div>
+<div class="bg-light" style="width:80%;margin-top:22px;margin-left:auto;margin-right:auto;padding:22px;border-radius:10px;">
+    <center><h1 style="font-family: 'Abril Fatface', cursive;" class="text-info"><b>Activate Account</b></h1></center>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy}}
+        <a type="submit" class="btn btn-info" href="{% url 'enrolled' %}">Submit</a>
+    </form>
+</div>
+{% endblock  %}

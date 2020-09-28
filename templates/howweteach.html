@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Kaksha - Home
+{% endblock %}
+{% block content %}
+
+<div class="jumbotron bg-info" style="margin-top:22px;">
+    <h4 style="font-family: 'Abril Fatface', cursive;" class="display-4 text-light">Hey Buddy!!</h4>
+    <p class="lead text-light" style="font-family: 'Courier Prime', monospace;"> Below are the steps that tells about
+        our unique way of teaching that has been developed by
+        <a class="text-danger" href="{% url 'home' %}"> कaksha </a> to make learning more simplified and more engaging.
+        If you follow below steps we guarantee you that you gonna master the subject that you want to learn or you are
+        learning.
+    </p>
+    <hr class="my-4">
+    <p class="text-light" style="font-family: 'Courier Prime', monospace;"><span class="text-warning"
+                                                                                 style="font-weight:bold;">Step 1 >></span>We teach the
+        theory - Most of us
+        ignore the theory part but as per the research conducted across the globe the theory is really very important
+        (about 25% of learning happens by
+        understanding theory).</p>
+    <p class="text-light" style="font-family: 'Courier Prime', monospace;"><span class="text-warning"
+                                                                                 style="font-weight:bold;">Step 2 >></span>
+       We Focus on Implementation - We explain and let you implement things - yaa!! the 40% part is implementing. We help you to
+        implement everything you need to.</p>
+    <p class="text-light" style="font-family: 'Courier Prime', monospace;"><span class="text-warning"
+                                                                                 style="font-weight:bold;">Step 1 >></span>
+       We make you Practice - Most people confuse implementation with 100% learning, No that's practicing is another 20%. Very
+        Crucial and important. </p>
+    <p class="text-light" style="font-family: 'Courier Prime', monospace;"><span class="text-warning"
+                                                                                 style="font-weight:bold;">Step 1 >></span>
+       We take the Test - The last 15%. Checking Yourself is the best thing you can do to learn or say master things. </p>
+</div>
+
+
+{% endblock %}

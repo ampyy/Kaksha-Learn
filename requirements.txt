@@ -1,0 +1,15 @@
+asgiref==3.2.10
+certifi==2020.6.20
+chardet==3.0.4
+Django==3.1
+django-crispy-forms==1.9.2
+django-embed-video==1.3.3
+django-phone-field==1.8.1
+django-phonenumber-field==5.0.0
+idna==2.10
+mysqlclient @ file:///C:/Users/ADMIN/PycharmProjects/Kaksha/onlinekaksha/mysqlclient-1.4.6-cp38-cp38-win32.whl
+pycryptodome==3.9.8
+pytz==2020.1
+requests==2.24.0
+sqlparse==0.3.1
+urllib3==1.25.10
